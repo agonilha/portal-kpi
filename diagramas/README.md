@@ -13,13 +13,13 @@ Essa é a lista dos diagramas UML utilizados na etapa de análise do projeto.
 
 ```plantuml
 
-:Gestor:
+Actor Gestor
 
-:Colaborador:
+Actor :Colaborador:
 
-:RH:
+Actor RH
 
-:TI:
+Actor TI
 ```
 
 ## Diagrama Entidade-Relacionamento (DER)
