@@ -93,9 +93,9 @@ erDiagram
 
 ```mermaid
 erDiagram
-    User ||--o{ Department : belongs to
+    User ||--o{ Department : "belongs to"
     User ||--|{ Profile : has
-    User ||--|{ Company : has access to
+    User ||--|{ Company : "has access to"
     Department ||--o{ Worker : has
     Company ||--o{ KPI : tracks
     Profile ||--|{ Permission : has
