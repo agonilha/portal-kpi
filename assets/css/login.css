@@ -1,0 +1,36 @@
+.gradiente {
+    /* fallback for old browsers */
+    background: #0ab216;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom, rgba(10,178,22,0.45), rgba(0,77,43,0.45));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, rgba(10,178,22,0.45), rgba(0,77,43,0.45))
+
+}
+
+@media (min-width: 768px) {
+    /* .gradient-form {
+        height: 100vh !important;
+    } */
+}
+
+@media (min-width: 769px) {
+    .gradiente {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #0ab216;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom, rgba(10,178,22,0.45), rgba(0,77,43,0.45));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, rgba(10,178,22,0.45), rgba(0,77,43,0.45))
+}
+
