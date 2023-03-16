@@ -12,7 +12,67 @@ Essa é a lista dos diagramas UML utilizados na etapa de análise do projeto.
 ## Diagrama de caso de uso
 
 ```plantuml
+@startuml
+:Gerente:
+:Colaborador:
+:RH:
+:TI:
 
+package Gerência {
+    (Gerenciar\nKPIs) as (g_geren_kpi)
+    (Relatar\nKPI) as (g_editar_kpi)
+    (Gerar\nRelatório) as (g_gerar_relatorio)
+}
+
+package Administração {
+    (Gerenciar\nKPIs) as (adm_kpi)
+    (Criar\nKPI) as (adm_criar)
+    (Manutenção) as (adm_manutencao)
+    (Definir Pesos\ne Métricas) as (adm_definir)
+}
+
+package Configuração {
+    (Gerenciar\nConta) as (gerenciar_conta)
+    (Trocar\nSenha) as (trocar_senha)
+}
+
+(Visualizar\nKPIs) as (vis_kpi)
+(Contestar\nKPI) as (contestar)
+
+Gerente --> g_geren_kpi
+Colaborador --> vis_kpi
+Colaborador --> contestar
+RH --> adm_kpi
+TI --> adm_manutencao
+
+Gerente --> gerenciar_conta
+Colaborador --> gerenciar_conta
+
+(g_geren_kpi) <|-- (g_editar_kpi)
+(g_geren_kpi) <|-- (g_gerar_relatorio)
+(gerenciar_conta) <|-- (trocar_senha)
+(adm_kpi) <|-- (adm_criar)
+(adm_kpi) <|-- (adm_definir)
+
+@enduml
+```
+usecase Gerenciar_KPIs {
+"Visualizar KPIs"
+"Editar KPIs" {
+include Criar_novo_KPI
+}
+"Gerar relatório de KPIs"
+"Visualizar relatório de KPIs anteriores"
+"Criar novo KPI"
+}
+usecase Criar_novo_KPI {
+"Definir métricas"
+"Estabelecer meta"
+}
+Gerente --> Gerenciar_KPIs
+
+```plantuml
+@startuml firstDiagram
 actor "IT" as IT
 actor "HR" as HR
 actor "Manager" as Manager
@@ -34,9 +94,12 @@ rectangle "Portal KPI" {
     Worker --> (View historical KPI data)
     Worker --> (Report issues/errors)
 }
+
+@enduml
 ```
 
 ```plantuml
+@startuml secondDiagram
 actor IT
 actor HR
 actor Manager
@@ -66,6 +129,8 @@ rectangle KPIManagementWebsite {
     (View Historical KPIs) --> (For Workers Managed)
     (View Historical KPIs) --> (To Monitor Own Performance)
 }
+
+@enduml
 ```
 
 ## Diagrama Entidade-Relacionamento (DER)
@@ -130,6 +195,7 @@ erDiagram
         int company_id
     }
     Permission {
+        int permission_id
         string name
         string description
     }

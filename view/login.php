@@ -32,7 +32,7 @@ include_once('./resources/_header.php');
                                         <h4 class="mt-1 mb-5 pb-1">Portal de premiações</h4>
                                     </div>
 
-                                    <form action="../control/conLogin.php" method="post">
+                                    <form action="../control/control_login.php" method="post">
                                         <p>Por favor, faça o login com a sua conta</p>
 
                                         <?php if(isset($_GET['error'])){ ?>
