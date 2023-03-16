@@ -56,20 +56,6 @@ Colaborador --> gerenciar_conta
 
 @enduml
 ```
-usecase Gerenciar_KPIs {
-"Visualizar KPIs"
-"Editar KPIs" {
-include Criar_novo_KPI
-}
-"Gerar relatório de KPIs"
-"Visualizar relatório de KPIs anteriores"
-"Criar novo KPI"
-}
-usecase Criar_novo_KPI {
-"Definir métricas"
-"Estabelecer meta"
-}
-Gerente --> Gerenciar_KPIs
 
 ```plantuml
 @startuml firstDiagram
